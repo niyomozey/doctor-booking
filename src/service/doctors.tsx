@@ -131,7 +131,7 @@ const doctors = [
 ];
 
 
-// export function getInfluencers() {
+// export function getDoctors() {
 //   return doctors;
 // }
 export default doctors
