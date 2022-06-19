@@ -1,5 +1,5 @@
 import React,{useState} from "react"
-import doctorsList from "../service/doctors"
+import doctorsList from "../../service/doctors"
 import Doctor from "./Doctor"
 export interface doctorsInterface{
     name: string;
@@ -12,7 +12,7 @@ export interface doctorsInterface{
 const Doctors=()=>{
     const [doctors, getDoctors] = useState<doctorsInterface[] | []>(doctorsList)
     return(
-        <div>
+        <div className="container-full flex flex-wrap justify-center">
            { doctors.map((doctor: doctorsInterface)=>{
                 return <Doctor doctor={doctor}/>
             })

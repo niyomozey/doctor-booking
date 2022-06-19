@@ -1,5 +1,5 @@
 import React from 'react';
-import Doctors from './components/Doctors';
+import Doctors from './components/Doctor/Doctors';
 
 function App() {
   return (
