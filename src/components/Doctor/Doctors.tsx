@@ -5,7 +5,7 @@ export interface doctorsInterface{
     name: string;
     phone: string;
     fax: string;
-    adree: string;
+    address: string;
     specialist: string;
     imageUrl: string;
 }

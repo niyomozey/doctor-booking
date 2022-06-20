@@ -1,10 +1,11 @@
 import React from "react"
+import { useNavigate } from "react-router-dom";
 
 type doctorsType={
     name: string;
     phone: string;
     fax: string;
-    adree: string;
+    address: string;
     specialist: string;
     imageUrl: string;
 }
@@ -13,9 +14,15 @@ export interface doctorType{
     doctor: doctorsType
 }
 
+
 const Doctor=({doctor}: doctorType)=>{
-    const {name,phone,fax, adree, specialist, imageUrl} = doctor
-    return(
+    const {name,phone,fax, address, specialist, imageUrl} = doctor
+    let navigate = useNavigate()
+    const handleRequest = ():void =>{
+            console.log('Hello world')
+            navigate("/profile", { replace: true });
+    }
+    return (
         <div className="bg-zinc-200 sm:w-2/5 m-4 w-full rounded-xl flex flex-col">
             <div className=" flex flex-row ">
                 <div className="w-1/4">
@@ -28,10 +35,10 @@ const Doctor=({doctor}: doctorType)=>{
                     <div className=" flex md:flex-row flex-col">
                         <div className="md:w-2/4 w-full">
                             <p>{specialist}</p>
-                            <p className="py-2">{adree}</p>
+                            <p className="py-2">{address}</p>
                         </div>
                         <div className="w-full flex justify-center items-center">
-                            <button className="bg-teal-700 md:px-6 px-2 text-white py-1 rounded-2xl">Request Button</button>
+                            <button onClick={()=> handleRequest()} className="bg-teal-700 md:px-6 px-2 text-white py-1 rounded-2xl">Request Button</button>
                         </div>
                     </div>
                 </div>
