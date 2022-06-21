@@ -1,6 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
+import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css';
 
 const Profile = ()=>{
+    const [value, onChange] = useState(new Date());
     return(
         <div className="None:container h-screen flex flex-row justify-around">
             <div className="w-[28%] rounded-2xl mt-10 border border-gray-100 shadow-lg h-[95vh]">
@@ -44,10 +47,10 @@ const Profile = ()=>{
                             <i className="fa fa-heart fa-lg text-black mr-6 mt-6 cursor-pointer"  aria-hidden="true"></i>
                         </div>
                     </div>
-                    <div>
-                        <p>Details</p>
-                        <img className="rounded-full bolder bolder-red-900 h-40 w-40" src="/assets/doctor3.jpg"/>
-                        <p className="text-4xl font-bold py-1">Anderson Doe</p>
+                    <div className="text-center">
+                        <p className="text-2xl font-bold py-1">Details</p>
+                        <img className="rounded-full mx-auto bolder bolder-red-900 h-40 w-40" src="/assets/doctor3.jpg"/>
+                        <p className="text-2xl font-bold py-1">Anderson Doe</p>
                         <p className="text-gray-500 ">Family medecine physian</p>
                     </div>
                     <div className="z-100 flex flex-col rounded-t-2xl bg-gray-100 top-[40%] bottom-0 w-full h-[54%]">
@@ -58,12 +61,18 @@ const Profile = ()=>{
                         </div>
                     </div>
                     <div>
-                        <i className="fa fa-message fa-2x"></i>
-                        <i className="fa fa-facebook fa-2x"></i>
-                        <i className="fa fa-message fa-2x"></i>
+                         <Calendar onChange={onChange} value={value} />
+                         <p>{value.toDateString()}</p>
+                    </div>
+                    <div className="mb-16 flex flex-center w-full border-t border-gray-200">
+                        <div className="w-[40%] mx-auto py-4">
+                            <i className="fa fa-comment fa-2x p-2 bg-blue-500 text-white rounded-full mx-1"></i>
+                            <i className="fa fa-phone fa-2x py-2 px-3 bg-blue-500 text-white rounded-full mx-2"></i>
+                            <i className="fa fa-info fa-2x py-2 px-4 m-2 bg-blue-500 text-white rounded-full mx-1"></i>
+                        </div>
                     </div>
                     <div className="absolute cursor-pointer rounded-b-2xl z-100 bg-blue-500 bottom-0 left-0 right-0 h-[8%]">
-                        <p className="text-white text-center p-2 text-lg">BOOK AN APPOINTMENT</p>
+                        <p className="text-white text-center p-2  text-lg">BOOK AN APPOINTMENT</p>
                     </div>
                 </div>               
             </div>
