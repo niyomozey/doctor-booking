@@ -19,7 +19,42 @@ const Profile = ()=>{
                         <div className="px-4 pt-4 border-b border-gray-200">
                             <p className="text-green-700 font-bold">ONLINE NOW</p>
                             <p className="text-4xl font-bold py-1">Anderson Doe</p>
-                            <p className="text-gray-500 ">Family medecine physian</p>
+                            <p className="text-gray-500 pb-3">Family medecine physian</p>
+                        </div>
+                        <div>
+                            <div className="flex flex-col">
+                                <div>
+                                    <p className="text-blue-500 px-4 text-lg">GOOD REVIEWS</p>
+                                </div>
+                                <div className="flex flex-row  justify-center items-center">
+                                    <div className="w-[80%] bg-gray-200 h-3 rounded-lg">
+                                        <div className="bg-blue-500 h-3 w-[95%] rounded-lg"></div>
+                                    </div>
+                                    <p className="text-blue-500 px-4 text-xl">95</p>
+                                </div>
+                            </div>
+                            <div className="flex flex-col">
+                                <div>
+                                    <p className="text-blue-500 px-4 text-lg">TOTAL SCORE</p>
+                                </div>
+                                <div className="flex flex-row  justify-center items-center">
+                                    <div className="w-[80%] bg-gray-200 h-3 rounded-lg">
+                                        <div className="bg-blue-500 h-3 w-[87%] rounded-lg"></div>
+                                    </div>
+                                    <p className="text-blue-500 px-4 text-xl ">87</p>
+                                </div>
+                            </div>
+                            <div className="flex flex-col">
+                                <div>
+                                    <p className="text-blue-500 px-4 text-lg">Satisfaction</p>
+                                </div>
+                                <div className="flex flex-row  justify-center items-center">
+                                    <div className="w-[80%] bg-gray-200 h-3 rounded-lg">
+                                        <div className="bg-blue-500 h-3 w-[90%] rounded-lg"></div>
+                                    </div>
+                                    <p className="text-blue-500 px-4 text-xl">90</p>
+                                </div>
+                            </div>
                         </div>
                         <div className="overflow-scroll px-4" >
                             <p className="text-lg py-2 font-bold">About</p>
