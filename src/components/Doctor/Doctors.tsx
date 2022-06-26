@@ -1,6 +1,7 @@
 import React,{useState} from "react"
 import doctorsList from "../../service/doctors"
 import Doctor from "./Doctor"
+import { connect } from "react-redux";
 export interface doctorsInterface{
     name: string;
     phone: string;
@@ -21,4 +22,5 @@ const Doctors=()=>{
     )
 }
 
-export default Doctors
+export default connect()(Doctors)
+// export default Doctors

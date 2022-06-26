@@ -1,0 +1,24 @@
+.react-calendar__month-view__days{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+}
+.react-calendar{
+    width: 90%;
+    background: rgb(245, 245, 245);
+    border: none;
+    margin: auto;
+}
+.react-calendar__month-view__days button{
+    color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+.react-calendar__month-view__days__day--weekend abbr{
+    color: rgb(197, 39, 39);
+}
+.react-calendar__month-view__days__day--neighboringMonth abbr{
+    color: gray;
+}
+.react-calendar__navigation__label__labelText{
+    color: rgb(59 130 246 / var(--tw-bg-opacity));
+    padding-right:0px;
+}
