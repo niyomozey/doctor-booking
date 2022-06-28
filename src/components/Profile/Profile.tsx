@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import Time from "./Time";
 import 'react-calendar/dist/Calendar.css';
 import './Profile.css'
@@ -11,28 +11,29 @@ const Profile = () => {
     const [event, setEvent] = useState(null)
     const [info, setInfo] = useState(false)
     const [showTime, setShowTime] = useState(false)
-    
+    const doctor:any = useSelector((state)=>state)
+    const {name,phone,fax, address, specialist, imageUrl} = doctor.doctorReducer[0]
     function displayInfo(e: any) {
         setInfo(true);
         setEvent(e.target.innerText);
     }
 
     return (
-        <div className="None:container h-screen flex flex-row justify-around">
-            <div className="w-[28%] rounded-2xl mt-10 border border-gray-100 shadow-lg h-[95vh]">
+        <div className="None:container h-screen flex flex-col md:flex-row justify-around">
+            <div className="md:w-[28%] rounded-2xl mt-10 border border-gray-100 shadow-lg md:h-[95vh]">
                 <div className="relative flex flex-col h-[97%] rounded-2xl m-2 bg-gray-100">
                     <div className="h-[45%]">
                         <div className="flex flex-row w-full justify-between absolute">
                             <i className="fa fa-arrow-left fa-lg text-white ml-6 mt-6 cursor-pointer" aria-hidden="true"></i>
                             <i className="fa fa-heart fa-lg text-white mr-6 mt-6 cursor-pointer" aria-hidden="true"></i>
                         </div>
-                        <img className="rounded-t-2xl h-full w-full" src="/assets/doctor3.jpg" />
+                        <img className="rounded-t-2xl h-full w-full" src={imageUrl} />
                     </div>
                     <div className="absolute z-100 flex flex-col rounded-t-2xl bg-gray-100 top-[40%] bottom-0 w-full h-[54%]">
                         <div className="px-4 pt-4 border-b border-gray-200">
                             <p className="text-green-700 font-bold">ONLINE NOW</p>
-                            <p className="text-4xl font-bold py-1">Anderson Doe</p>
-                            <p className="text-gray-500 pb-3">Family medecine physian</p>
+                            <p className="text-4xl font-bold py-1">{name}</p>
+                            <p className="text-gray-500 pb-3">{specialist}</p>
                         </div>
                         <div>
                             <div className="flex flex-col">
@@ -97,9 +98,9 @@ const Profile = () => {
                     </div>
                     <div className="text-center">
                         <p className="text-2xl font-bold py-1">Details</p>
-                        <img className="rounded-full mx-auto bolder bolder-red-900 h-40 w-40" src="/assets/doctor3.jpg" />
-                        <p className="text-2xl font-bold py-1">Anderson Doe</p>
-                        <p className="text-gray-500 ">Family medecine physian</p>
+                        <img className="rounded-full mx-auto bolder bolder-red-900 h-40 w-40" src={imageUrl} />
+                        <p className="text-2xl font-bold py-1">{name}</p>
+                        <p className="text-gray-500 ">{specialist}</p>
                     </div>
                     <div className="z-100 flex flex-col rounded-t-2xl bg-gray-100 top-[40%] bottom-0 w-full h-[54%]">
                         {/* <div className="px-4 pt-4 border-b border-gray-200">

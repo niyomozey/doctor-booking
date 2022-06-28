@@ -5,6 +5,8 @@ function doctorReducer(state=doctors,action:any):any{
             return state
         case "ADD_DOCTOR":
             return [...state,action.payload]
+        case "SINGLE_DOCTOR":
+            return state.filter((element:any)=> element.id === action.payload.id)
         default:
             return state;
     }

@@ -1,7 +1,9 @@
 import React from "react"
 import { useNavigate } from "react-router-dom";
+import { connect, useDispatch } from 'react-redux'
 
 type doctorsType={
+    id: number,
     name: string;
     phone: string;
     fax: string;
@@ -18,9 +20,11 @@ export interface doctorType{
 const Doctor=({doctor}: doctorType)=>{
     const {name,phone,fax, address, specialist, imageUrl} = doctor
     let navigate = useNavigate()
+    let dispatch = useDispatch()
+
     const handleRequest = ():void =>{
-            console.log('Hello world')
-            navigate("/profile", { replace: true });
+        dispatch({type: 'SINGLE_DOCTOR', payload: doctor})
+        navigate("/profile", { replace: true });
     }
     return (
         <div className="bg-zinc-200 sm:w-2/5 m-4 w-full rounded-xl flex flex-col">
@@ -58,4 +62,4 @@ const Doctor=({doctor}: doctorType)=>{
     )
 }
 
-export default Doctor
+export default connect()(Doctor)

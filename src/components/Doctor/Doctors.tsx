@@ -3,6 +3,7 @@ import doctorsList from "../../service/doctors"
 import Doctor from "./Doctor"
 import { connect } from "react-redux";
 export interface doctorsInterface{
+    id: number,
     name: string;
     phone: string;
     fax: string;
